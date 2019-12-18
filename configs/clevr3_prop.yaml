@@ -1,15 +1,15 @@
 # use all encodings
 EXP:
-  NAME: 'clevr6_prop'
+  NAME: 'clevr3_prop'
 MODEL:
   NAME: "IODINE"
   DEVICE: "cuda"
   PARALLEL: True
   DEVICE_IDS: []
 DATASET:
-  TRAIN: "CLEVR"
-  VAL: "CLEVR"
-  TEST: "CLEVR"
+  TRAIN: "CLEVR3"
+  VAL: "CLEVR3"
+  TEST: "CLEVR3"
 TRAIN:
   RESUME: True
   # per epoch
