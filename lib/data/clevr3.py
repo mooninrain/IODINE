@@ -2,6 +2,7 @@ from torch.utils.data import Dataset
 from torchvision import transforms
 from skimage import io
 import os
+import json
 import numpy as np
 import torch
 from PIL import Image, ImageFile
