@@ -119,7 +119,6 @@ class IODINE(nn.Module):
         """
         # logger.update(var=self.logvar.item())
         B, _, H, W = x.size()
-        import pdb; pdb.set_trace()
         # self.posterior.init_unit((B, self.K, self.dim_latent), device=x.device)
         self.posterior.init_unit(B, self.K)
         self.lstm_hidden = None
