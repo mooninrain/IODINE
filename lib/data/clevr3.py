@@ -27,7 +27,7 @@ class CLEVR3(Dataset):
         with open(scene_path,'r') as r:
             scene_data = json.load(r)['scenes']
         for k,scene in enumerate(scene_data):
-            assert scene['image_filename'] == os.path.split(img_paths[k])[-1]
+            assert scene['image_filename'] == os.path.split(self.img_paths[k])[-1]
             self.masks.append(annotate_masks(scene))
         
     def __getitem__(self, index):
