@@ -71,7 +71,7 @@ ARCH:
 
 
 TENSORBOARD:
-  IS_ON: True
+  IS_ON: False
   TARGETS:
     SCALAR: [
       "loss", "kl", "likelihood"]
