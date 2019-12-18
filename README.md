@@ -22,11 +22,7 @@ Then in `lib/data/`, write your own dataset class. Dataset class should return i
 
 **Training.** Run 
 
-```
-python tools/train_net.py --config-file [PATH_TO_CONFIG_FILE]
-```
-
-to train. For example, `python tools/train_net.py --config-file configs/clevr6_prop.yaml`
+to train. For example, `jac-run tools/train_net.py --config-file configs/clevr6_prop.yaml`
 
 **Visualization**. Just `tensorboard --logdir=logs --port=6006`.
 
