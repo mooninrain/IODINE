@@ -7,7 +7,7 @@ import torch
 from PIL import Image, ImageFile
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
-class CLEVR(Dataset):
+class CLEVR3(Dataset):
     def __init__(self, root, mode):
         # path = os.path.join(root, mode)
         self.root = root
@@ -25,7 +25,6 @@ class CLEVR(Dataset):
         img = io.imread(img_path)[:, :, :3]
         transform = transforms.Compose([
             transforms.ToPILImage(),
-            transforms.CenterCrop(192),
             transforms.Resize(128),
             transforms.ToTensor(),
         ])
@@ -33,7 +32,6 @@ class CLEVR(Dataset):
 
         mask_transform = transforms.Compose([
             transforms.ToPILImage(),
-            transforms.CenterCrop(192),
             transforms.Resize(128, interpolation=Image.NEAREST),
         ])
         filename = os.path.split(img_path)[-1]
