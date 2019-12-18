@@ -37,14 +37,14 @@ class CLEVR3(Dataset):
         img = io.imread(img_path)[:, :, :3]
         transform = transforms.Compose([
             transforms.ToPILImage(),
-            transforms.Resize(128),
+            transforms.Resize((128,128)),
             transforms.ToTensor(),
         ])
         img = transform(img)
 
         mask_transform = transforms.Compose([
             transforms.ToPILImage(),
-            transforms.Resize(128, interpolation=Image.NEAREST),
+            transforms.Resize((128,128), interpolation=Image.NEAREST),
         ])
         
         mask = self.masks[index]
