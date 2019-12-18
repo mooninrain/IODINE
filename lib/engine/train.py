@@ -92,8 +92,8 @@ def train(
                 ))
                 
                 # tensorboard
-                tb_data = getter.get_tensorboard_data()
-                if not tensorboard is None:
+                if not (tensorboard is None or getter is None):
+                    tb_data = getter.get_tensorboard_data()
                     tensorboard.update(var=model.module.sigma)
                     tensorboard.update(loss=meters['loss'].median)
                     tensorboard.update(**tb_data)
