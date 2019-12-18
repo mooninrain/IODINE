@@ -2,6 +2,7 @@ from .mnist import MNIST
 from torch.utils.data import DataLoader
 import torch
 from .clevr import CLEVR
+from .clevr3 import CLEVR3
 from .dsprite import MultiDSprites
 def make_dataloader(cfg, mode):
     if mode == 'train':
@@ -34,12 +35,12 @@ def collate_fn(batch):
     
     return data, mask
     
-    
-
 def make_dataset(cfg, mode):
     if cfg.DATASET.TRAIN == 'MNIST':
         return MNIST('data/MNIST', mode)
     elif cfg.DATASET.TRAIN == 'CLEVR':
         return CLEVR('data/CLEVR', mode)
+    elif cfg.DATASET.TRAIN == 'CLEVR3':
+        return CLEVR3('data/clevr3', mode)
     elif cfg.DATASET.TRAIN == 'DSPRITES':
         return MultiDSprites('data/DSPRITES', mode)
